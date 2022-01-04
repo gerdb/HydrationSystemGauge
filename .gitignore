@@ -50,3 +50,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+HydrationSystemGauge.X/build/
+HydrationSystemGauge.X/dist/
+
