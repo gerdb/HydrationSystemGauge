@@ -57,8 +57,8 @@ void SYSTEM_Initialize(void)
 
 void OSCILLATOR_Initialize(void)
 {
-    // SCS FOSC; SPLLEN disabled; IRCF 8MHz_HF; 
-    OSCCON = 0x70;
+    // SCS FOSC; SPLLEN disabled; IRCF 2MHz_HF; 
+    OSCCON = 0x60;
     // LFIOFR disabled; HFIOFL not stable; OSTS intosc; PLLR disabled; HFIOFS not stable; HFIOFR disabled; MFIOFR disabled; T1OSCR disabled; 
     OSCSTAT = 0x00;
     // TUN 0; 
@@ -69,8 +69,8 @@ void OSCILLATOR_Initialize(void)
 
 void WDT_Initialize(void)
 {
-    // WDTPS 1:65536; SWDTEN OFF; 
-    WDTCON = 0x16;
+    // WDTPS 1:2097152; SWDTEN OFF; 
+    WDTCON = 0x20;
 }
 
 /**

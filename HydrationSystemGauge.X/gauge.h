@@ -29,6 +29,7 @@ extern "C" {
 
 //  Function prototypes
 void GAUGE_Init(void);
+void GAUGE_DeInit(void);
 uint8_t GAUGE_Measure(void);
 
 #ifdef	__cplusplus

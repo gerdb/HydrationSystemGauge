@@ -21,6 +21,7 @@
  */
 
 #include "mcc_generated_files/mcc.h"
+#include "project.h"
 #include "sound.h"
 
 
@@ -36,7 +37,14 @@ void SOUND_Init()
 {
     IO_PIEZO_A_SetLow();
     IO_PIEZO_B_SetLow();
-    __delay_ms(3000);
+}
+/**
+ * Initialize the module
+ */
+void SOUND_DeInit()
+{
+    IO_PIEZO_A_SetLow();
+    IO_PIEZO_B_SetLow();
 }
 
 /**
@@ -47,18 +55,19 @@ static void SOUND_BeepLow()
     volatile uint16_t i;
     volatile uint8_t ii;
     
+    __delay_ms(500);
     for (ii=0; ii<250; ii++)
     {
         IO_PIEZO_A_SetHigh();
         IO_PIEZO_B_SetLow();
-        for (i=0; i< 60; i++);
+        for (i=0; i< 13; i++);
         IO_PIEZO_A_SetLow();
         IO_PIEZO_B_SetHigh();
-        for (i=0; i< 60; i++);
+        for (i=0; i< 13; i++);
     }
     IO_PIEZO_A_SetLow();
     IO_PIEZO_B_SetLow();
-    __delay_ms(500);
+
 }
 
 /**
@@ -68,19 +77,20 @@ static void SOUND_BeepHigh()
 {
     volatile uint16_t i;
     volatile uint8_t ii;
-    
+
+    __delay_ms(500);
+
     for (ii=0; ii<250; ii++)
     {
         IO_PIEZO_A_SetHigh();
         IO_PIEZO_B_SetLow();
-        for (i=0; i< 40; i++);
+        for (i=0; i< 8; i++);
         IO_PIEZO_A_SetLow();
         IO_PIEZO_B_SetHigh();
-        for (i=0; i< 40; i++);
+        for (i=0; i< 8; i++);
     }
     IO_PIEZO_A_SetLow();
     IO_PIEZO_B_SetLow();
-    __delay_ms(500);
 }
 
 /**
@@ -102,17 +112,17 @@ static void SOUND_Chirp()
                 iii --; 
                 IO_PIEZO_A_SetHigh();
                 IO_PIEZO_B_SetLow();
-                for (i=0; i< iii; i+=3);
+                for (i=0; i< iii; i+=12);
                 IO_PIEZO_A_SetLow();
                 IO_PIEZO_B_SetHigh();
-                for (i=0; i< iii; i+=3);
+                for (i=0; i< iii; i+=12);
             }
         }
         IO_PIEZO_A_SetLow();
         IO_PIEZO_B_SetLow();
     __delay_ms(100);
     }
-    __delay_ms(2000);
+    __delay_ms(1000);
 }
 
 
@@ -130,14 +140,12 @@ static void SOUND_BeepSingle(uint8_t vierteles)
         SOUND_BeepLow();
     }
     
-    __delay_ms(1000);
+    __delay_ms(500);
 
     for (i=0; i<highs; i++)
     {
         SOUND_BeepHigh();
     }
-    
-    __delay_ms(4000);
 }
 
 /**
@@ -147,7 +155,7 @@ void SOUND_Beep(uint8_t vierteles)
 {
     SOUND_Chirp();
     SOUND_Chirp();
-    __delay_ms(2000);
+    __delay_ms(1000);
     
     SOUND_BeepSingle(vierteles);
 }

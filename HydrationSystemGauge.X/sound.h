@@ -29,6 +29,7 @@ extern "C" {
 
 //  Function prototypes
 void SOUND_Init(void);
+void SOUND_DeInit(void);
 void SOUND_Beep(uint8_t vierteles);
 
 

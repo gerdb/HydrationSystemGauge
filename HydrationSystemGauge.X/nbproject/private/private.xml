@@ -3,7 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/gerd/Dokumente/Projekte/Trinkblase_Sensor/Software/HydrationSystemGauge/HydrationSystemGauge.X/main.c</file>
+            <file>file:/home/gerd/Dokumente/Projekte/Trinkblase_Sensor/Software/HydrationSystemGauge.X/main.c</file>
+            <file>file:/home/gerd/Dokumente/Projekte/Trinkblase_Sensor/Software/HydrationSystemGauge.X/sound.h</file>
+            <file>file:/home/gerd/Dokumente/Projekte/Trinkblase_Sensor/Software/HydrationSystemGauge.X/project.h</file>
+            <file>file:/home/gerd/Dokumente/Projekte/Trinkblase_Sensor/Software/HydrationSystemGauge.X/gauge.h</file>
+            <file>file:/home/gerd/Dokumente/Projekte/Trinkblase_Sensor/Software/HydrationSystemGauge.X/sound.c</file>
+            <file>file:/home/gerd/Dokumente/Projekte/Trinkblase_Sensor/Software/HydrationSystemGauge.X/gauge.c</file>
         </group>
     </open-files>
 </project-private>

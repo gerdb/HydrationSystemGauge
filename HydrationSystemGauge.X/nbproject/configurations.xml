@@ -13,6 +13,7 @@
       </logicalFolder>
       <itemPath>sound.h</itemPath>
       <itemPath>gauge.h</itemPath>
+      <itemPath>project.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

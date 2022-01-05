@@ -20,6 +20,7 @@
  *
  */
 #include "mcc_generated_files/mcc.h"
+#include "project.h"
 #include "gauge.h"
 
 volatile uint16_t u16aMeas[12];
@@ -58,8 +59,26 @@ void GAUGE_Init()
     
     DAC1CON0bits.DAC1EN = 1;    // Enable
     DAC1CON1 = 0x40;            // 0x40 = 1,25V
+    __delay_ms(10);
+#ifdef AMP_TEST    
+    __delay_ms(100); 
+#endif
 }   
 
+/**
+ * De-Initialize the module and prepares for sleep
+ */
+void GAUGE_DeInit()
+{
+    GAUGE_AllHigh();
+    T1CONbits.TMR1ON = 0;       // Disable timer
+    
+    OPA1CONbits.OPA1PCH = 0b100;// Non-inverting input connects to DAC1_output
+    OPA1CONbits.OPA1SP = 0;     // No High GBWP mode
+    OPA1CONbits.OPA1EN = 0;     // Disable
+    
+    DAC1CON0bits.DAC1EN = 0;    // DisEnable
+} 
 
 static void GAUGE_AllLow()
 {
