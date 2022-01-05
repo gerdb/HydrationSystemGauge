@@ -27,6 +27,8 @@
 extern "C" {
 #endif
 
+#define GAUGE_MIN_VAL 0x0020
+    
 //  Function prototypes
 void GAUGE_Init(void);
 void GAUGE_DeInit(void);

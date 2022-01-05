@@ -61,8 +61,8 @@ void main(void)
         u8RunsCnt ++;
         if (u8RunsCnt >= u8Runs)
         {
-            // first 1min cycle then 10min
-            u8Runs = 10;
+            // first a 1min cycle then 20min
+            u8Runs = 20;
             // This triggers a new measurement
             u8RunsCnt = 0;
         }

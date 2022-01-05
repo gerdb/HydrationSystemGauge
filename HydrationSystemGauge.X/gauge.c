@@ -165,6 +165,15 @@ uint8_t GAUGE_Measure()
     
     GAUGE_AllHigh();
     
+    // Value must be at least GAUGE_MIN_VAL
+    for (i=0; i<12; i++)
+    {
+        if (u16aMeas[i] < GAUGE_MIN_VAL)
+        {
+            u16aMeas[i] = 0;
+        }
+    }
+    
     // Search for the maximum value
     u16MaxVal = 0;
     for (i=0; i<12; i++)
